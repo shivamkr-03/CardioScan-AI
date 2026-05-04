@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.pid
+*.db
+.env
+.venv/
+venv/
+node_modules/
+dist/
+.DS_Store
+backend/artifacts/
+backend/heart_disease_uci.csv

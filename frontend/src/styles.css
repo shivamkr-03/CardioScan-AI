@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: "Inter", sans-serif;
+  
+  --bg-color: #0a0f1e;
+  --text-color: #f8fafc;
+  --card-bg: rgba(17, 24, 39, 0.86);
+  --card-border: rgba(148, 163, 184, 0.14);
+  --input-bg: rgba(15, 23, 42, 0.9);
+  --input-border: rgba(148, 163, 184, 0.2);
+
+  --color-slate-950: 2, 6, 23;
+  --color-slate-900: 15, 23, 42;
+  --color-slate-800: 30, 41, 59;
+  --color-slate-400: 148, 163, 184;
+  --color-slate-300: 203, 213, 225;
+  --color-slate-200: 226, 232, 240;
+  --color-slate-100: 241, 245, 249;
+  --color-white: 255, 255, 255;
+}
+
+.light {
+  color-scheme: light;
+  --bg-color: #f1f5f9;
+  --text-color: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --input-bg: rgba(255, 255, 255, 0.9);
+  --input-border: rgba(0, 0, 0, 0.2);
+
+  --color-slate-950: 248, 250, 252;
+  --color-slate-900: 241, 245, 249;
+  --color-slate-800: 226, 232, 240;
+  --color-slate-400: 100, 116, 139;
+  --color-slate-300: 71, 85, 105;
+  --color-slate-200: 51, 65, 85;
+  --color-slate-100: 30, 41, 59;
+  --color-white: 15, 23, 42;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(6, 182, 212, 0.12), transparent 28%),
+    radial-gradient(circle at 85% 12%, rgba(230, 57, 70, 0.1), transparent 30%),
+    var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+*,
+button,
+a {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card {
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.medical-input {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  padding: 0.8rem 0.9rem;
+  color: var(--text-color);
+  outline: none;
+  transition: all 0.3s;
+}
+
+.medical-input:focus {
+  border-color: #06b6d4;
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.12);
+}
+
+.range-input {
+  accent-color: #06b6d4;
+  width: 100%;
+}
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  nav,
+  .no-print,
+  .floating-disclaimer {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+    color: #111827;
+  }
+
+  .print-only {
+    display: block;
+  }
+}
